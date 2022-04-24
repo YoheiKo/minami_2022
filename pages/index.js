@@ -85,7 +85,8 @@ const Home = () => {
               <h2 className="mb-2 font-semibold">議案書拡大・ダウンロード</h2>
               <a
                 target="_blank"
-                href="https://drive.google.com/file/d/1Z5DG09qyjSmlm1xzKlfHRWgTDnFdW7wD/view?usp=sharing"
+                // href="https://drive.google.com/file/d/1Z5DG09qyjSmlm1xzKlfHRWgTDnFdW7wD/view?usp=sharing"
+                href="https://drive.google.com/file/d/1X2aIDiHUWb-_fNbh38GJxOycCXRZqWM7/view?usp=sharing"
               >
                 <button className=" mx-auto flex w-[40%] justify-center rounded bg-[#79b0f4] py-2 px-4 text-center text-sm text-white outline-none hover:bg-[#7996f4] md:w-[30%]">
                   ダウンロード
