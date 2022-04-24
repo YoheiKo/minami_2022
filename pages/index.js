@@ -95,7 +95,7 @@ const Home = () => {
             </div>
             <div className="py-4">
               <h2 className="font-semibold">質問</h2>
-              <p className="mb-4">質問期間 4月26日（火）～ 5月6日（金）</p>
+              <p className="mb-4">質問期間 4月27日（水）～ 5月8日（日）</p>
               <a
                 target="_blank"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdLjNxXbPq_2sjPqSGDE8TDpjLrrSKbIXX7hjwvLKGaVEMUnA/viewform?vc=0&c=0&w=1&flr=0"
@@ -107,7 +107,7 @@ const Home = () => {
             </div>
             <div className="py-4">
               <h2 className="font-semibold">投票</h2>
-              <p className="mb-4">投票期間 4月26日（火）～ 5月13日（金）</p>
+              <p className="mb-4">投票期間 4月27日（水）～ 5月15日（日）</p>
               <a
                 target="_blank"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfe_ZQwGxUPuNZmu9Y38wm1TWPMI7XDo-UBFtRSIXrdahbSuw/viewform?vc=0&c=0&w=1&flr=0"
