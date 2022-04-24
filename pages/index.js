@@ -7,7 +7,7 @@ import pdfjsWorkerSrc from '../pdf-worker'
 pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorkerSrc
 
 const Home = () => {
-  const url = '/gian.pdf'
+  const url = '/gian_2022.pdf'
   const [numPages, setNumPages] = useState(null)
 
   function onDocumentLoadSuccess({ numPages }) {
