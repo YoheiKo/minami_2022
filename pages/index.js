@@ -3,15 +3,16 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
 import pdfjsWorkerSrc from '../pdf-worker'
+// import 'react-pdf/dist/esm/pdf.worker.min.js';
 
 pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorkerSrc
 
 const Home = () => {
-  const url = '/gian_2022.pdf'
-  const [numPages, setNumPages] = useState(null)
+  const url = '/sokai_2024.pdf'
+  const [numPages, setNumPages] = useState(0);
 
   function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages)
+    setNumPages(numPages);
   }
 
   const [totalPages, setTotalPages] = useState(0)
@@ -44,7 +45,7 @@ const Home = () => {
       <div className="absolute top-0 mb-10 w-full">
         <div className="relative z-40 flex h-20 w-full items-center bg-white after:absolute after:bottom-0 after:block after:h-2 after:w-full after:bg-[url('/line.jpg')] after:pl-[-24px] ">
           <h1 className="p-3 text-sm font-semibold md:p-6 md:text-xl">
-            2022年度本駒込南保育園 父母の会 Web総会
+            2024年度本駒込南保育園 父母の会 Web総会
           </h1>
         </div>
       </div>
@@ -55,7 +56,7 @@ const Home = () => {
           <p className="font-semibold">総会手順</p>
           <ol className="p-2">
             <li className="p-2">
-              1.本サイトに添付の［2022年度本駒込南保育園「父母の会」総会議案書］の内容を確認ください。
+              1.本サイトに添付の［2024年度本駒込南保育園「父母の会」総会議案書］の内容を確認ください。
             </li>
             <li className="p-2">
               2.期間内に、ご質問は質問フォームより、投票フォームより賛否の投票を行ってください。
@@ -72,12 +73,26 @@ const Home = () => {
             各クラスの「父母の会」役員に会費をお納めくださいますようお願いいたします。
           </p>
           <div className="mt-5 h-[500px] w-[100%] overflow-x-scroll overflow-y-scroll rounded-3xl border-2 border-gray-100 pt-8 scrollbar-hide md:mt-10">
-            <Document
+            {/* <Document
               className="flex flex-col md:items-center"
               file={url}
               onLoadSuccess={onLoadSuccess}
             >
               {pdfContents}
+            </Document> */}
+            <Document
+              file={url}
+              onLoadSuccess={onDocumentLoadSuccess}
+              // onError={onDocumentError}
+              className="flex flex-col md:items-center"
+            >
+              {Array.from(new Array(numPages), (el, index) => (
+                <Page
+                  key={`page_${index + 1}`}
+                  pageNumber={index + 1}
+                  className="w-[200px] md:w-[400px] lg:w-[600px]"
+                />
+              ))}
             </Document>
           </div>
           <div className="my-5">
@@ -86,7 +101,7 @@ const Home = () => {
               <a
                 target="_blank"
                 // href="https://drive.google.com/file/d/1Z5DG09qyjSmlm1xzKlfHRWgTDnFdW7wD/view?usp=sharing"
-                href="https://drive.google.com/file/d/1X2aIDiHUWb-_fNbh38GJxOycCXRZqWM7/view?usp=sharing"
+                href="https://drive.google.com/file/d/1TOG3VrLV1GT_B99KYVN2s3PckfAMGnwa/view?usp=sharing"
               >
                 <button className=" mx-auto flex w-[40%] justify-center rounded bg-[#79b0f4] py-2 px-4 text-center text-sm text-white outline-none hover:bg-[#7996f4] md:w-[30%]">
                   ダウンロード
@@ -95,10 +110,10 @@ const Home = () => {
             </div>
             <div className="py-4">
               <h2 className="font-semibold">質問</h2>
-              <p className="mb-4">質問期間 4月27日（水）～ 5月8日（日）</p>
+              <p className="mb-4">質問期間 4月27日（土）～ 5月5日（日）</p>
               <a
                 target="_blank"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdLjNxXbPq_2sjPqSGDE8TDpjLrrSKbIXX7hjwvLKGaVEMUnA/viewform?vc=0&c=0&w=1&flr=0"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfFdfuWeG050iM5hwrl14bXND0MeqGVYgWqLSiSVqs73NVjLA/viewform?usp=sf_link"
               >
                 <button className=" mx-auto flex w-[40%] justify-center rounded bg-[#79b0f4] py-2 px-4 text-center text-sm text-white outline-none hover:bg-[#7996f4] md:w-[30%]">
                   質問・ご意見
@@ -107,10 +122,10 @@ const Home = () => {
             </div>
             <div className="py-4">
               <h2 className="font-semibold">投票</h2>
-              <p className="mb-4">投票期間 4月27日（水）～ 5月15日（日）</p>
+              <p className="mb-4">投票期間 4月27日（土）～ 5月12日（日）</p>
               <a
                 target="_blank"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfe_ZQwGxUPuNZmu9Y38wm1TWPMI7XDo-UBFtRSIXrdahbSuw/viewform?vc=0&c=0&w=1&flr=0"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSftt9IDhsXHlc11GidTiuGLOsNET8adSjKf3yCxtfneFjNaXA/viewform?usp=sf_link"
               >
                 <button className=" mx-auto flex w-[40%] justify-center rounded bg-[#79b0f4] py-2 px-4 text-center text-sm text-white outline-none hover:bg-[#7996f4] md:w-[30%]">
                   投票ボタン
@@ -124,9 +139,9 @@ const Home = () => {
       <footer className="absolkute md:text-2l pt-5 pb-3 text-center text-sm md:pt-6 md:pb-6">
         <div className=" relative after:absolute after:top-0 after:block after:h-2 after:w-full after:bg-[url('/line.jpg')]">
           <p className="pt-6 font-semibold">
-            本駒込南保育園父母の会 2022 <br />
-            <a target="_blank" href="mailto:honkomaminami2022@gmail.com ">
-              honkomaminami2022@gmail.com{' '}
+            本駒込南保育園父母の会 2024 <br />
+            <a target="_blank" href="mailto:honkomaminami2024@gmail.com ">
+            honkomaminami2024@gmail.com{' '}
             </a>{' '}
             <span className="ml-4">
               <a target="_blank" href="https://github.com/YoheiKo/minami_2022">
