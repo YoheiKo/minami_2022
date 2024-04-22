@@ -90,7 +90,7 @@ const Home = () => {
                 <Page
                   key={`page_${index + 1}`}
                   pageNumber={index + 1}
-                  className="w-[200px] md:w-[400px] lg:w-[600px]"
+                  className="w-[150px] md:w-[200px] lg:w-[500px]"
                 />
               ))}
             </Document>
